@@ -146,7 +146,7 @@ const cardData = [
   
     cardData.forEach(card => {
       const cardElement = document.createElement("div");
-      cardElement.className = "relative card mt-10 rounded-3xl delay-100 duration-300 overflow-hidden bg-sky-100 max-w-screen-sm transition-transform ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-200 transition-transform ease-in-out";
+      cardElement.className = "relative  card mt-10 rounded-3xl delay-100 duration-300 overflow-hidden bg-sky-100 max-w-screen-sm transition-transform ease-in-out hover:-translate-y-1 hover:shadow-lg hover:shadow-sky-200 transition-transform ease-in-out";
   
       cardElement.innerHTML = `
         <div class="relative w-full h-64">
@@ -195,5 +195,20 @@ const cardData = [
 
   
     
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fadein');
+        }
+      });
+    }, {
+      threshold: 0.25 // elemen akan terlihat jika 25% dari elemen masuk ke viewport
+    });
+
+    const target = document.getElementById('#uiux');
+    observer.observe(target);
   });
   

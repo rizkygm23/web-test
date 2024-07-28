@@ -1035,6 +1035,20 @@ video {
   --tw-bg-opacity: 0.1;
 }
 
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.from-slate-300 {
+  --tw-gradient-from: #cbd5e1 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(203 213 225 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-slate-200 {
+  --tw-gradient-to: #e2e8f0 var(--tw-gradient-to-position);
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1061,10 +1075,6 @@ video {
   padding: 1.5rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1078,6 +1088,11 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.py-11 {
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
 }
 
 .py-3 {
@@ -1098,6 +1113,10 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.pb-36 {
+  padding-bottom: 9rem;
 }
 
 .pb-8 {
@@ -1215,6 +1234,11 @@ video {
   color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1285,11 +1309,28 @@ video {
   --tw-gradient-to: #1e293b var(--tw-gradient-to-position);
 }
 
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadein {
+  animation: move ease-in-out both;
+}
+
 .card-wrapped::before {
   background: conic-gradient(
             rgba(225, 225, 221, 0.4) 0deg,
             rgba(2, 132, 199, 1) 0deg,
             transparent 80deg
+            
             
         );
   position: absolute;
@@ -1371,13 +1412,6 @@ video {
 }
 
 @keyframes move {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(200px, 200px);
-  }
 }
 
 .btn-fixed {
@@ -1498,6 +1532,21 @@ video {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1509,9 +1558,19 @@ video {
     border-radius: 9999px;
   }
 
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .md\:opacity-0 {
@@ -1526,6 +1585,10 @@ video {
 
   .lg\:top-5 {
     top: 1.25rem;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .lg\:block {
@@ -1589,13 +1652,13 @@ video {
     text-align: left;
   }
 
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
-  .lg\:text-xl {
-    font-size: 1.25rem;
+  .lg\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 

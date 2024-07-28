@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 @layer utilities {
+
     .card-wrapped {
-        @apply relative bg-gradient-to-b from-slate-700 to-slate-800 overflow-hidden;
+        @apply relative bg-gradient-to-b from-slate-700 to-slate-800 overflow-hidden ;
+        
+    }
+    .fadein {
+
+        @apply animate-fadein
+        
     }
 
     .card-wrapped::before {
@@ -12,6 +19,7 @@
             rgba(225, 225, 221, 0.4) 0deg,
             rgba(2, 132, 199, 1) 0deg,
             transparent 80deg
+            
             
         );
         @apply absolute h-[150%] w-[150%] content-[''] left-[-25%] top-[-25%] animate-border-spin hover:animate-border-spins  ;
@@ -21,6 +29,8 @@
         @apply absolute  w-[calc(100%-10px)] h-[calc(100%-10px)] top-[5px] left-[5px]
         bg-gradient-to-b from-slate-700 to-slate-900 mx-auto rounded-lg;
     }
+
+
 }
 
 
@@ -51,12 +61,7 @@
 }
 
 @keyframes move {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(200px, 200px);
-    }
+    
 }
 
 .btn-fixed {
